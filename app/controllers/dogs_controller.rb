@@ -1,7 +1,8 @@
 class DogsController < ApplicationController
 
     def index
-    @dogs = Dog.all
+        @dogs = Dog.all.sort_by { |dog| dog.employees.count }.reverse
+        
     end
 
     def show
@@ -9,10 +10,11 @@ class DogsController < ApplicationController
     end
 
     def create
-        if @dog = Dog.create(dog_params)
+        @dog = Dog.create(dog_params)
+        if @dog.valid?
             redirect_to dog_path(@dog)
         else
-            flash[:error] = dog.errors.full_messages
+            flash[:errors] = dog.errors.full_messages
             redirect_to dog_new_path
         end
     end

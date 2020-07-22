@@ -1,0 +1,20 @@
+<h1>Employee Show Page</h1>
+
+<h3>Name: <%= @employee.full_name %></h3>
+<br>
+<p>Alias: <%= @employee.alias%></p>
+<p>Title: <%= @employee.title %></p>
+<p>Office: <%= @employee.office %></p>
+
+<p><%= link_to "EDIT EMPLOYEE", edit_employee_path(@employee) %></p>
+<%= button_to "DESTROY EMPLOYEE", employee_path(@employee), method: :delete %>
+
+<h3>Dog:</h3>
+<p><%= link_to @employee.dog.name, dog_path(@employee.dog) if @employee.dog  %></p>
+
+
+
+<br>
+<p><%= link_to "Back to Employee Index", employees_path %></p>
+
+<img src="<%= @employee.img_url %>" alt="<%= @employee.full_name %>">

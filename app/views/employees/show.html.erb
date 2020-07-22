@@ -1,0 +1,11 @@
+<h1><%= full_name(@employee)  %></h1>
+
+<%= image_tag @employee.img_url %><br><br>
+Alias: <%= @employee.alias %><br><br>
+Title: <%= @employee.title %><br><br>
+Office: <%= @employee.office %><br><br>
+Dog: <%=link_to @employee.dog.name, dog_path(@employee.dog) %><br><br>
+
+<%= button_to "Edit Employee", edit_employee_path, :method => "get" %><br><br>
+<%= button_to "Employee List", employees_path, :method => "get" %>
+

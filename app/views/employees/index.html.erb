@@ -1,0 +1,5 @@
+<marquee><h1>|Employees-----Employees----------Employees--------Employees------Employees|<h1>
+<% @employees.each do  |employee| %>
+<%= link_to "#{employee.first_name} #{employee.last_name}", employee_path(employee) %><br>
+<% end %>
+</marquee>

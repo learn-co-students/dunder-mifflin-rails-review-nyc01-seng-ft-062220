@@ -2,7 +2,7 @@ class DogsController < ApplicationController
     before_action :find_dog, except: [:index, :new, :create]
 
     def index
-        @dogs = Dog.all
+        @dogs = Dog.all.sort_by { |dog| dog.employees.count }.reverse
     end
 
     def show

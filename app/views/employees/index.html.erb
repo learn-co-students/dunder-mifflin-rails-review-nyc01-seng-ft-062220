@@ -1,0 +1,13 @@
+<h2>The Office's Office</h2>
+
+<% @employees.each do |employee| %>
+    <p> <%= link_to employee.full_name, employee_path(employee) %> </p>
+<% end %>
+
+
+
+
+
+
+<br><br><br>
+<p>employees#index</p>

@@ -1,0 +1,15 @@
+<h2> <strong> Profile: <%= @employee.full_name  %> </strong> </h2>
+
+<%= image_tag @employee.img_url %>
+
+
+<ul> 
+    <li>Alias: <%= @employee.alias %></>
+    <li>Office: <%= @employee.office %></li>
+    <li>Title: <%= @employee.title %></li>
+    <li>Dog: <%= link_to @employee.dog.name, dog_path(@employee.dog) %></li>
+</ul>
+
+
+<br><br><br>
+<p>employees#show</p>

@@ -23,7 +23,6 @@ class DogsController < ApplicationController
             @dog.save
             redirect_to dog_path(@dog)
         else
-            #! test this new syntax
             redirect_to new_dog_path, form_error: @dog.errors.full_messages
         end
     end

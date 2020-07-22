@@ -1,0 +1,22 @@
+<h1>Add a new Employee and Pup</h1>
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@employee) do |f| %>
+
+<b>First name:</b> <%= f.text_field :first_name %><br>
+<b>Last name:</b> <%= f.text_field :last_name %><br>
+<b>Alias name:</b><%= f.text_field :alias %><br>
+<b>Title:</b> <%= f.text_field :title %><br>
+<b>Office:</b> <%= f.text_field :office %><br>
+<b>Image Link</b> <%= f.text_field :img_url  %><br>
+<b>Choose a Doggie</b><%= f.collection_select :dog_id, Dog.all, :id, :name %>
+<%= f.submit "Submit" %>
+<% end %>
+
+

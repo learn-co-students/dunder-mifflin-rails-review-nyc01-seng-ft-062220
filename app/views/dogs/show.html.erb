@@ -1,0 +1,8 @@
+<h1>Doggie info</h1>
+
+<b>Name:</b><%= @dog.name %> <br>
+<b>Breed:</b><%= @dog.breed %> <br>
+<b>Age:</b> <%= @dog.age.capitalize %><br>
+<b>Owners:</b>
+<% @dog.employees.each_with_index do |employee, i| %> <br>
+<%= link_to "Employee: #{i+1} #{employee.first_name} #{employee.last_name} ", employee_path(employee) %> <%end%>

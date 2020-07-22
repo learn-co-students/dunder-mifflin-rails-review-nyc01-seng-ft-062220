@@ -1,0 +1,5 @@
+<marquee><h1>|Doggies-----Doggies----------Doggies--------Doggies------Doggies-|<h1>
+<% @dogs.each do  |dog| %>
+<%= link_to dog.name, dog_path(dog) %><br>
+<% end %>
+</marquee>

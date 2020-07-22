@@ -1,0 +1,17 @@
+<h1> DOG SHOW PAGE </h1>
+
+<h2><%=  @dog.name %></h2>
+<h2><%=  @dog.breed %></h2>
+<h2><%=  @dog.age %></h2>
+
+<%= %>
+
+<ul>
+
+<% @dog_employees.each do |employee| %>
+<li><%= employee.first_name %></li>
+<% end %>
+
+<%= button_to "DELETE", dog_path(@dog), method: :delete %>
+
+</ul>

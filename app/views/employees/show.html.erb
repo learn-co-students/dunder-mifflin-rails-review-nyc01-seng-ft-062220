@@ -1,0 +1,13 @@
+<h1> About <%= @employee.full_name %></h1>
+
+<ul>    
+    <li><strong>Job title: </strong><%= @employee.title %></li>
+    <li><strong>Alias: </strong><%= @employee.alias %></li>
+    <li><strong>Office: </strong><%= @employee.office %></li>
+</ul>
+
+
+<% if @employee.img_url %>
+    <%= image_tag(@employee.img_url, :size => '160x100', alt: "No image") %>
+<% end %>
+

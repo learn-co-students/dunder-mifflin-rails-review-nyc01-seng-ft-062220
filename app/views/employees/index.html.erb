@@ -1,0 +1,7 @@
+
+
+<h3> All Employees Index Page!!</h3><br>
+
+<% @employees.each do |employee| %>
+    <%= link_to "#{employee.first_name} #{employee.last_name}", employee_path(employee) %><br>
+<% end %>

@@ -1,0 +1,14 @@
+<h1> Dogs Index Page </h1>
+
+<% sorted_dogs = @dogs.sort_by{|dog| dog.num_employees} %>
+<% sorted_dogs.each do |dog|%>
+    <ul>
+        <li><strong>Name: </strong><%= link_to dog.name, dog_path(dog) %></li>
+        
+        <strong>Owners: </strong><br>
+        <% dog.employees.each do |employee| %>
+            <li><%= employee.first_name %> <%= employee.last_name %></li>
+<% end%>
+    </ul>
+<% end%>
+ 

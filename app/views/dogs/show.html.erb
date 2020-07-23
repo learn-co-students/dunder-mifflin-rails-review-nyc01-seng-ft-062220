@@ -1,0 +1,13 @@
+<h1> SHOW Page</h1>
+Name: <%= @dog.name %><br>
+Breed: <%= @dog.breed %><br>
+Age: <%= @dog.age %><br>
+<br>
+<% @dog.employees.each do |employ|%>
+   Employee Name: <%= link_to full_name(employ), employee_path(employ) %><br>
+
+<%end%>
+
+<%= button_to "Edit Dog", edit_dog_path, method: :get %><br>
+
+<%= button_to "Delete Dog", @dog, method: :delete %><br>
